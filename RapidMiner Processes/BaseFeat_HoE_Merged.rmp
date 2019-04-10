@@ -1,0 +1,1214 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.2.001">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.2.001" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="set_macros" compatibility="9.2.001" expanded="true" height="82" name="Set Macros" width="90" x="45" y="34">
+        <list key="macros">
+          <parameter key="test" value="1"/>
+          <parameter key="label1" value="4"/>
+          <parameter key="classification" value="1"/>
+        </list>
+      </operator>
+      <operator activated="true" class="select_subprocess" compatibility="9.2.001" expanded="true" height="82" name="Switch &lt;TEST&gt;" width="90" x="179" y="34">
+        <parameter key="select_which" value="%{test}"/>
+        <process expanded="true">
+          <operator activated="true" class="subprocess" compatibility="9.2.001" expanded="true" height="82" name="Get 9 Females" width="90" x="45" y="34">
+            <process expanded="true">
+              <operator activated="true" class="retrieve" compatibility="9.2.001" expanded="true" height="68" name="Retrieve ReaderAffectModel_TV_Sex_Female" width="90" x="45" y="34">
+                <parameter key="repository_entry" value="//Local Repository/data/ReaderAffectModel_TV_Sex_Female"/>
+              </operator>
+              <operator activated="true" class="remove_duplicates" compatibility="9.2.001" expanded="true" height="82" name="Get Sex!User" width="90" x="45" y="187">
+                <parameter key="attribute_filter_type" value="single"/>
+                <parameter key="attribute" value="USER"/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="attribute_value"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="time"/>
+                <parameter key="block_type" value="attribute_block"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="false"/>
+                <parameter key="treat_missing_values_as_duplicates" value="false"/>
+              </operator>
+              <operator activated="true" class="sample" compatibility="9.2.001" expanded="true" height="82" name="Randomly select 9 Sex!User" width="90" x="45" y="340">
+                <parameter key="sample" value="absolute"/>
+                <parameter key="balance_data" value="false"/>
+                <parameter key="sample_size" value="9"/>
+                <parameter key="sample_ratio" value="0.1"/>
+                <parameter key="sample_probability" value="0.1"/>
+                <list key="sample_size_per_class"/>
+                <list key="sample_ratio_per_class"/>
+                <list key="sample_probability_per_class"/>
+                <parameter key="use_local_random_seed" value="true"/>
+                <parameter key="local_random_seed" value="1992"/>
+              </operator>
+              <operator activated="true" class="multiply" compatibility="9.2.001" expanded="true" height="250" name="Multiply: Sex!User" width="90" x="246" y="34"/>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="sex_user (9)" width="90" x="447" y="442">
+                <parameter key="macro" value="sex_user9"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="9"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="sex_user (8)" width="90" x="581" y="391">
+                <parameter key="macro" value="sex_user8"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="8"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="sex_user (7)" width="90" x="447" y="340">
+                <parameter key="macro" value="sex_user7"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="7"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="sex_user (6)" width="90" x="581" y="289">
+                <parameter key="macro" value="sex_user6"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="6"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="sex_user (5)" width="90" x="447" y="238">
+                <parameter key="macro" value="sex_user5"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="5"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="sex_user (4)" width="90" x="581" y="187">
+                <parameter key="macro" value="sex_user4"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="4"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="sex_user (3)" width="90" x="447" y="136">
+                <parameter key="macro" value="sex_user3"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="3"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="sex_user (2)" width="90" x="581" y="85">
+                <parameter key="macro" value="sex_user2"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="2"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="sex_user" width="90" x="447" y="34">
+                <parameter key="macro" value="sex_user1"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="1"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="filter_examples" compatibility="9.2.001" expanded="true" height="103" name="Build Sex# dataset" width="90" x="983" y="34">
+                <parameter key="parameter_expression" value="(USER == %{sex_user1}) || (USER == %{sex_user2}) || (USER == %{sex_user3}) || (USER == %{sex_user4}) || (USER == %{sex_user5}) || (USER == %{sex_user6}) || (USER == %{sex_user7}) || (USER == %{sex_user8}) || (USER == %{sex_user9})"/>
+                <parameter key="condition_class" value="expression"/>
+                <parameter key="invert_filter" value="false"/>
+                <list key="filters_list">
+                  <parameter key="filters_entry_key" value="USER.eq.%{user1}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user2}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user3}"/>
+                </list>
+                <parameter key="filters_logic_and" value="true"/>
+                <parameter key="filters_check_metadata" value="true"/>
+              </operator>
+              <operator activated="true" class="select_subprocess" compatibility="9.2.001" expanded="true" height="68" name="Select Subprocess" width="90" x="179" y="493">
+                <parameter key="select_which" value="1"/>
+                <process expanded="true">
+                  <portSpacing port="source_input 1" spacing="0"/>
+                  <portSpacing port="sink_output 1" spacing="0"/>
+                </process>
+                <process expanded="true">
+                  <portSpacing port="source_input 1" spacing="0"/>
+                  <portSpacing port="sink_output 1" spacing="0"/>
+                </process>
+              </operator>
+              <connect from_op="Retrieve ReaderAffectModel_TV_Sex_Female" from_port="output" to_op="Get Sex!User" to_port="example set input"/>
+              <connect from_op="Get Sex!User" from_port="example set output" to_op="Randomly select 9 Sex!User" to_port="example set input"/>
+              <connect from_op="Get Sex!User" from_port="original" to_op="Build Sex# dataset" to_port="example set input"/>
+              <connect from_op="Randomly select 9 Sex!User" from_port="example set output" to_op="Multiply: Sex!User" to_port="input"/>
+              <connect from_op="Multiply: Sex!User" from_port="output 1" to_op="sex_user" to_port="example set"/>
+              <connect from_op="Multiply: Sex!User" from_port="output 2" to_op="sex_user (2)" to_port="example set"/>
+              <connect from_op="Multiply: Sex!User" from_port="output 3" to_op="sex_user (3)" to_port="example set"/>
+              <connect from_op="Multiply: Sex!User" from_port="output 4" to_op="sex_user (4)" to_port="example set"/>
+              <connect from_op="Multiply: Sex!User" from_port="output 5" to_op="sex_user (5)" to_port="example set"/>
+              <connect from_op="Multiply: Sex!User" from_port="output 6" to_op="sex_user (6)" to_port="example set"/>
+              <connect from_op="Multiply: Sex!User" from_port="output 7" to_op="sex_user (7)" to_port="example set"/>
+              <connect from_op="Multiply: Sex!User" from_port="output 8" to_op="sex_user (8)" to_port="example set"/>
+              <connect from_op="Multiply: Sex!User" from_port="output 9" to_op="sex_user (9)" to_port="example set"/>
+              <connect from_op="Build Sex# dataset" from_port="example set output" to_port="out 1"/>
+              <portSpacing port="source_in 1" spacing="0"/>
+              <portSpacing port="source_in 2" spacing="0"/>
+              <portSpacing port="sink_out 1" spacing="0"/>
+              <portSpacing port="sink_out 2" spacing="0"/>
+            </process>
+          </operator>
+          <operator activated="true" class="retrieve" compatibility="9.2.001" expanded="true" height="68" name="Retrieve ReaderAffectModel_TV_Sex_Male" width="90" x="45" y="136">
+            <parameter key="repository_entry" value="//Local Repository/data/ReaderAffectModel_TV_Sex_Male"/>
+          </operator>
+          <operator activated="true" class="append" compatibility="9.2.001" expanded="true" height="103" name="Append: Sex" width="90" x="179" y="85">
+            <parameter key="datamanagement" value="double_array"/>
+            <parameter key="data_management" value="auto"/>
+            <parameter key="merge_type" value="all"/>
+          </operator>
+          <connect from_port="input 1" to_op="Get 9 Females" to_port="in 1"/>
+          <connect from_op="Get 9 Females" from_port="out 1" to_op="Append: Sex" to_port="example set 1"/>
+          <connect from_op="Retrieve ReaderAffectModel_TV_Sex_Male" from_port="output" to_op="Append: Sex" to_port="example set 2"/>
+          <connect from_op="Append: Sex" from_port="merged set" to_port="output 1"/>
+          <portSpacing port="source_input 1" spacing="0"/>
+          <portSpacing port="source_input 2" spacing="0"/>
+          <portSpacing port="sink_output 1" spacing="0"/>
+          <portSpacing port="sink_output 2" spacing="0"/>
+        </process>
+        <process expanded="true">
+          <operator activated="true" class="subprocess" compatibility="9.2.001" expanded="true" height="82" name="Retrieve ReadPref# Dataset" width="90" x="45" y="34">
+            <process expanded="true">
+              <operator activated="true" class="retrieve" compatibility="9.2.001" expanded="true" height="68" name="Retrieve ReaderAffectModel_ReadPref_1" width="90" x="45" y="34">
+                <parameter key="repository_entry" value="//Local Repository/data/ReaderAffectModel_TV_ReadPref_1"/>
+              </operator>
+              <operator activated="true" class="remove_duplicates" compatibility="9.2.001" expanded="true" height="82" name="Get ReadPref!User" width="90" x="179" y="34">
+                <parameter key="attribute_filter_type" value="single"/>
+                <parameter key="attribute" value="USER"/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="attribute_value"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="time"/>
+                <parameter key="block_type" value="attribute_block"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="false"/>
+                <parameter key="treat_missing_values_as_duplicates" value="false"/>
+              </operator>
+              <operator activated="true" class="sample" compatibility="9.2.001" expanded="true" height="82" name="Randomly select 3 ReadPref!User" width="90" x="179" y="187">
+                <parameter key="sample" value="absolute"/>
+                <parameter key="balance_data" value="false"/>
+                <parameter key="sample_size" value="3"/>
+                <parameter key="sample_ratio" value="0.1"/>
+                <parameter key="sample_probability" value="0.1"/>
+                <list key="sample_size_per_class"/>
+                <list key="sample_ratio_per_class"/>
+                <list key="sample_probability_per_class"/>
+                <parameter key="use_local_random_seed" value="true"/>
+                <parameter key="local_random_seed" value="1992"/>
+              </operator>
+              <operator activated="true" class="multiply" compatibility="9.2.001" expanded="true" height="124" name="Multiply: ReadPref!User" width="90" x="179" y="340"/>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readpref_user (3)" width="90" x="313" y="544">
+                <parameter key="macro" value="readpref_user3"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="3"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readpref_user (2)" width="90" x="313" y="442">
+                <parameter key="macro" value="readpref_user2"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="2"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readpref_user" width="90" x="313" y="340">
+                <parameter key="macro" value="readpref_user1"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="1"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="filter_examples" compatibility="9.2.001" expanded="true" height="103" name="Build ReadPref# dataset" width="90" x="447" y="34">
+                <parameter key="parameter_expression" value="(USER == %{readpref_user1}) || (USER == %{readpref_user2}) || (USER == %{readpref_user3})"/>
+                <parameter key="condition_class" value="expression"/>
+                <parameter key="invert_filter" value="false"/>
+                <list key="filters_list">
+                  <parameter key="filters_entry_key" value="USER.eq.%{user1}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user2}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user3}"/>
+                </list>
+                <parameter key="filters_logic_and" value="true"/>
+                <parameter key="filters_check_metadata" value="true"/>
+              </operator>
+              <connect from_op="Retrieve ReaderAffectModel_ReadPref_1" from_port="output" to_op="Get ReadPref!User" to_port="example set input"/>
+              <connect from_op="Get ReadPref!User" from_port="example set output" to_op="Randomly select 3 ReadPref!User" to_port="example set input"/>
+              <connect from_op="Get ReadPref!User" from_port="original" to_op="Build ReadPref# dataset" to_port="example set input"/>
+              <connect from_op="Randomly select 3 ReadPref!User" from_port="example set output" to_op="Multiply: ReadPref!User" to_port="input"/>
+              <connect from_op="Multiply: ReadPref!User" from_port="output 1" to_op="readpref_user" to_port="example set"/>
+              <connect from_op="Multiply: ReadPref!User" from_port="output 2" to_op="readpref_user (2)" to_port="example set"/>
+              <connect from_op="Multiply: ReadPref!User" from_port="output 3" to_op="readpref_user (3)" to_port="example set"/>
+              <connect from_op="Build ReadPref# dataset" from_port="example set output" to_port="out 1"/>
+              <portSpacing port="source_in 1" spacing="0"/>
+              <portSpacing port="source_in 2" spacing="0"/>
+              <portSpacing port="sink_out 1" spacing="0"/>
+              <portSpacing port="sink_out 2" spacing="0"/>
+            </process>
+          </operator>
+          <operator activated="true" class="subprocess" compatibility="9.2.001" expanded="true" height="82" name="Retrieve ReadPref# Dataset (2)" width="90" x="45" y="136">
+            <process expanded="true">
+              <operator activated="true" class="retrieve" compatibility="9.2.001" expanded="true" height="68" name="Retrieve ReaderAffectModel_ReadPref_2 (2)" width="90" x="45" y="34">
+                <parameter key="repository_entry" value="//Local Repository/data/ReaderAffectModel_TV_ReadPref_2"/>
+              </operator>
+              <operator activated="true" class="remove_duplicates" compatibility="9.2.001" expanded="true" height="82" name="Get ReadPref!User (2)" width="90" x="179" y="34">
+                <parameter key="attribute_filter_type" value="single"/>
+                <parameter key="attribute" value="USER"/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="attribute_value"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="time"/>
+                <parameter key="block_type" value="attribute_block"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="false"/>
+                <parameter key="treat_missing_values_as_duplicates" value="false"/>
+              </operator>
+              <operator activated="true" class="sample" compatibility="9.2.001" expanded="true" height="82" name="Randomly select 3 ReadPref!User (2)" width="90" x="179" y="187">
+                <parameter key="sample" value="absolute"/>
+                <parameter key="balance_data" value="false"/>
+                <parameter key="sample_size" value="3"/>
+                <parameter key="sample_ratio" value="0.1"/>
+                <parameter key="sample_probability" value="0.1"/>
+                <list key="sample_size_per_class"/>
+                <list key="sample_ratio_per_class"/>
+                <list key="sample_probability_per_class"/>
+                <parameter key="use_local_random_seed" value="true"/>
+                <parameter key="local_random_seed" value="1992"/>
+              </operator>
+              <operator activated="true" class="multiply" compatibility="9.2.001" expanded="true" height="124" name="Multiply: ReadPref!User (2)" width="90" x="179" y="340"/>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readpref_user (4)" width="90" x="313" y="544">
+                <parameter key="macro" value="readpref_user3"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="3"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readpref_user (5)" width="90" x="313" y="442">
+                <parameter key="macro" value="readpref_user2"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="2"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readpref_user (6)" width="90" x="313" y="340">
+                <parameter key="macro" value="readpref_user1"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="1"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="filter_examples" compatibility="9.2.001" expanded="true" height="103" name="Build ReadPref# dataset (2)" width="90" x="447" y="34">
+                <parameter key="parameter_expression" value="(USER == %{readpref_user1}) || (USER == %{readpref_user2}) || (USER == %{readpref_user3})"/>
+                <parameter key="condition_class" value="expression"/>
+                <parameter key="invert_filter" value="false"/>
+                <list key="filters_list">
+                  <parameter key="filters_entry_key" value="USER.eq.%{user1}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user2}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user3}"/>
+                </list>
+                <parameter key="filters_logic_and" value="true"/>
+                <parameter key="filters_check_metadata" value="true"/>
+              </operator>
+              <connect from_op="Retrieve ReaderAffectModel_ReadPref_2 (2)" from_port="output" to_op="Get ReadPref!User (2)" to_port="example set input"/>
+              <connect from_op="Get ReadPref!User (2)" from_port="example set output" to_op="Randomly select 3 ReadPref!User (2)" to_port="example set input"/>
+              <connect from_op="Get ReadPref!User (2)" from_port="original" to_op="Build ReadPref# dataset (2)" to_port="example set input"/>
+              <connect from_op="Randomly select 3 ReadPref!User (2)" from_port="example set output" to_op="Multiply: ReadPref!User (2)" to_port="input"/>
+              <connect from_op="Multiply: ReadPref!User (2)" from_port="output 1" to_op="readpref_user (6)" to_port="example set"/>
+              <connect from_op="Multiply: ReadPref!User (2)" from_port="output 2" to_op="readpref_user (5)" to_port="example set"/>
+              <connect from_op="Multiply: ReadPref!User (2)" from_port="output 3" to_op="readpref_user (4)" to_port="example set"/>
+              <connect from_op="Build ReadPref# dataset (2)" from_port="example set output" to_port="out 1"/>
+              <portSpacing port="source_in 1" spacing="0"/>
+              <portSpacing port="sink_out 1" spacing="0"/>
+              <portSpacing port="sink_out 2" spacing="0"/>
+            </process>
+          </operator>
+          <operator activated="true" class="subprocess" compatibility="9.2.001" expanded="true" height="82" name="Retrieve ReadPref# Dataset (3)" width="90" x="45" y="238">
+            <process expanded="true">
+              <operator activated="true" class="retrieve" compatibility="9.2.001" expanded="true" height="68" name="Retrieve ReaderAffectModel_ReadPref_3 (3)" width="90" x="45" y="34">
+                <parameter key="repository_entry" value="//Local Repository/data/ReaderAffectModel_TV_ReadPref_3"/>
+              </operator>
+              <operator activated="true" class="remove_duplicates" compatibility="9.2.001" expanded="true" height="82" name="Get ReadPref!User (3)" width="90" x="179" y="34">
+                <parameter key="attribute_filter_type" value="single"/>
+                <parameter key="attribute" value="USER"/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="attribute_value"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="time"/>
+                <parameter key="block_type" value="attribute_block"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="false"/>
+                <parameter key="treat_missing_values_as_duplicates" value="false"/>
+              </operator>
+              <operator activated="true" class="sample" compatibility="9.2.001" expanded="true" height="82" name="Randomly select 3 ReadPref!User (3)" width="90" x="179" y="187">
+                <parameter key="sample" value="absolute"/>
+                <parameter key="balance_data" value="false"/>
+                <parameter key="sample_size" value="3"/>
+                <parameter key="sample_ratio" value="0.1"/>
+                <parameter key="sample_probability" value="0.1"/>
+                <list key="sample_size_per_class"/>
+                <list key="sample_ratio_per_class"/>
+                <list key="sample_probability_per_class"/>
+                <parameter key="use_local_random_seed" value="true"/>
+                <parameter key="local_random_seed" value="1992"/>
+              </operator>
+              <operator activated="true" class="multiply" compatibility="9.2.001" expanded="true" height="124" name="Multiply: ReadPref!User (3)" width="90" x="179" y="340"/>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readpref_user (7)" width="90" x="313" y="544">
+                <parameter key="macro" value="readpref_user3"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="3"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readpref_user (8)" width="90" x="313" y="442">
+                <parameter key="macro" value="readpref_user2"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="2"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readpref_user (9)" width="90" x="313" y="340">
+                <parameter key="macro" value="readpref_user1"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="1"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="filter_examples" compatibility="9.2.001" expanded="true" height="103" name="Build ReadPref# dataset (3)" width="90" x="447" y="34">
+                <parameter key="parameter_expression" value="(USER == %{readpref_user1}) || (USER == %{readpref_user2}) || (USER == %{readpref_user3})"/>
+                <parameter key="condition_class" value="expression"/>
+                <parameter key="invert_filter" value="false"/>
+                <list key="filters_list">
+                  <parameter key="filters_entry_key" value="USER.eq.%{user1}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user2}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user3}"/>
+                </list>
+                <parameter key="filters_logic_and" value="true"/>
+                <parameter key="filters_check_metadata" value="true"/>
+              </operator>
+              <connect from_op="Retrieve ReaderAffectModel_ReadPref_3 (3)" from_port="output" to_op="Get ReadPref!User (3)" to_port="example set input"/>
+              <connect from_op="Get ReadPref!User (3)" from_port="example set output" to_op="Randomly select 3 ReadPref!User (3)" to_port="example set input"/>
+              <connect from_op="Get ReadPref!User (3)" from_port="original" to_op="Build ReadPref# dataset (3)" to_port="example set input"/>
+              <connect from_op="Randomly select 3 ReadPref!User (3)" from_port="example set output" to_op="Multiply: ReadPref!User (3)" to_port="input"/>
+              <connect from_op="Multiply: ReadPref!User (3)" from_port="output 1" to_op="readpref_user (9)" to_port="example set"/>
+              <connect from_op="Multiply: ReadPref!User (3)" from_port="output 2" to_op="readpref_user (8)" to_port="example set"/>
+              <connect from_op="Multiply: ReadPref!User (3)" from_port="output 3" to_op="readpref_user (7)" to_port="example set"/>
+              <connect from_op="Build ReadPref# dataset (3)" from_port="example set output" to_port="out 1"/>
+              <portSpacing port="source_in 1" spacing="0"/>
+              <portSpacing port="sink_out 1" spacing="0"/>
+              <portSpacing port="sink_out 2" spacing="0"/>
+            </process>
+          </operator>
+          <operator activated="true" class="subprocess" compatibility="9.2.001" expanded="true" height="82" name="Retrieve ReadPref# Dataset (4)" width="90" x="45" y="340">
+            <process expanded="true">
+              <operator activated="true" class="retrieve" compatibility="9.2.001" expanded="true" height="68" name="Retrieve ReaderAffectModel_ReadPref_4 (4)" width="90" x="45" y="34">
+                <parameter key="repository_entry" value="//Local Repository/data/ReaderAffectModel_TV_ReadPref_4"/>
+              </operator>
+              <operator activated="true" class="remove_duplicates" compatibility="9.2.001" expanded="true" height="82" name="Get ReadPref!User (4)" width="90" x="179" y="34">
+                <parameter key="attribute_filter_type" value="single"/>
+                <parameter key="attribute" value="USER"/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="attribute_value"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="time"/>
+                <parameter key="block_type" value="attribute_block"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="false"/>
+                <parameter key="treat_missing_values_as_duplicates" value="false"/>
+              </operator>
+              <operator activated="true" class="sample" compatibility="9.2.001" expanded="true" height="82" name="Randomly select 3 ReadPref!User (4)" width="90" x="179" y="187">
+                <parameter key="sample" value="absolute"/>
+                <parameter key="balance_data" value="false"/>
+                <parameter key="sample_size" value="3"/>
+                <parameter key="sample_ratio" value="0.1"/>
+                <parameter key="sample_probability" value="0.1"/>
+                <list key="sample_size_per_class"/>
+                <list key="sample_ratio_per_class"/>
+                <list key="sample_probability_per_class"/>
+                <parameter key="use_local_random_seed" value="true"/>
+                <parameter key="local_random_seed" value="1992"/>
+              </operator>
+              <operator activated="true" class="multiply" compatibility="9.2.001" expanded="true" height="124" name="Multiply: ReadPref!User (4)" width="90" x="179" y="340"/>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readpref_user (10)" width="90" x="313" y="544">
+                <parameter key="macro" value="readpref_user3"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="3"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readpref_user (11)" width="90" x="313" y="442">
+                <parameter key="macro" value="readpref_user2"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="2"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readpref_user (12)" width="90" x="313" y="340">
+                <parameter key="macro" value="readpref_user1"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="1"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="filter_examples" compatibility="9.2.001" expanded="true" height="103" name="Build ReadPref# dataset (4)" width="90" x="447" y="34">
+                <parameter key="parameter_expression" value="(USER == %{readpref_user1}) || (USER == %{readpref_user2}) || (USER == %{readpref_user3})"/>
+                <parameter key="condition_class" value="expression"/>
+                <parameter key="invert_filter" value="false"/>
+                <list key="filters_list">
+                  <parameter key="filters_entry_key" value="USER.eq.%{user1}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user2}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user3}"/>
+                </list>
+                <parameter key="filters_logic_and" value="true"/>
+                <parameter key="filters_check_metadata" value="true"/>
+              </operator>
+              <connect from_op="Retrieve ReaderAffectModel_ReadPref_4 (4)" from_port="output" to_op="Get ReadPref!User (4)" to_port="example set input"/>
+              <connect from_op="Get ReadPref!User (4)" from_port="example set output" to_op="Randomly select 3 ReadPref!User (4)" to_port="example set input"/>
+              <connect from_op="Get ReadPref!User (4)" from_port="original" to_op="Build ReadPref# dataset (4)" to_port="example set input"/>
+              <connect from_op="Randomly select 3 ReadPref!User (4)" from_port="example set output" to_op="Multiply: ReadPref!User (4)" to_port="input"/>
+              <connect from_op="Multiply: ReadPref!User (4)" from_port="output 1" to_op="readpref_user (12)" to_port="example set"/>
+              <connect from_op="Multiply: ReadPref!User (4)" from_port="output 2" to_op="readpref_user (11)" to_port="example set"/>
+              <connect from_op="Multiply: ReadPref!User (4)" from_port="output 3" to_op="readpref_user (10)" to_port="example set"/>
+              <connect from_op="Build ReadPref# dataset (4)" from_port="example set output" to_port="out 1"/>
+              <portSpacing port="source_in 1" spacing="0"/>
+              <portSpacing port="sink_out 1" spacing="0"/>
+              <portSpacing port="sink_out 2" spacing="0"/>
+            </process>
+          </operator>
+          <operator activated="true" class="append" compatibility="9.2.001" expanded="true" height="145" name="Append: RP" width="90" x="179" y="34">
+            <parameter key="datamanagement" value="double_array"/>
+            <parameter key="data_management" value="auto"/>
+            <parameter key="merge_type" value="all"/>
+          </operator>
+          <connect from_port="input 1" to_op="Retrieve ReadPref# Dataset" to_port="in 1"/>
+          <connect from_op="Retrieve ReadPref# Dataset" from_port="out 1" to_op="Append: RP" to_port="example set 1"/>
+          <connect from_op="Retrieve ReadPref# Dataset (2)" from_port="out 1" to_op="Append: RP" to_port="example set 2"/>
+          <connect from_op="Retrieve ReadPref# Dataset (3)" from_port="out 1" to_op="Append: RP" to_port="example set 3"/>
+          <connect from_op="Retrieve ReadPref# Dataset (4)" from_port="out 1" to_op="Append: RP" to_port="example set 4"/>
+          <connect from_op="Append: RP" from_port="merged set" to_port="output 1"/>
+          <portSpacing port="source_input 1" spacing="0"/>
+          <portSpacing port="source_input 2" spacing="0"/>
+          <portSpacing port="sink_output 1" spacing="0"/>
+          <portSpacing port="sink_output 2" spacing="0"/>
+        </process>
+        <process expanded="true">
+          <operator activated="true" class="subprocess" compatibility="9.2.001" expanded="true" height="82" name="Retrieve ReadFreq# Dataset" width="90" x="45" y="34">
+            <process expanded="true">
+              <operator activated="true" class="retrieve" compatibility="9.2.001" expanded="true" height="68" name="Retrieve ReaderAffectModel_TV_ReadFreq_1" width="90" x="45" y="34">
+                <parameter key="repository_entry" value="//Local Repository/data/ReaderAffectModel_TV_ReadFreq_1"/>
+              </operator>
+              <operator activated="true" class="remove_duplicates" compatibility="9.2.001" expanded="true" height="82" name="Get ReadFreq!User" width="90" x="179" y="34">
+                <parameter key="attribute_filter_type" value="single"/>
+                <parameter key="attribute" value="USER"/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="attribute_value"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="time"/>
+                <parameter key="block_type" value="attribute_block"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="false"/>
+                <parameter key="treat_missing_values_as_duplicates" value="false"/>
+              </operator>
+              <operator activated="true" class="sample" compatibility="9.2.001" expanded="true" height="82" name="Randomly select 2 ReadFreq!User" width="90" x="179" y="187">
+                <parameter key="sample" value="absolute"/>
+                <parameter key="balance_data" value="false"/>
+                <parameter key="sample_size" value="2"/>
+                <parameter key="sample_ratio" value="0.1"/>
+                <parameter key="sample_probability" value="0.1"/>
+                <list key="sample_size_per_class"/>
+                <list key="sample_ratio_per_class"/>
+                <list key="sample_probability_per_class"/>
+                <parameter key="use_local_random_seed" value="true"/>
+                <parameter key="local_random_seed" value="1992"/>
+              </operator>
+              <operator activated="true" class="multiply" compatibility="9.2.001" expanded="true" height="103" name="Multiply: ReadFreq!User" width="90" x="179" y="340"/>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readfreq_user (2)" width="90" x="313" y="442">
+                <parameter key="macro" value="readfreq_user2"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="2"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readfreq_user" width="90" x="313" y="340">
+                <parameter key="macro" value="readfreq_user1"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="1"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="filter_examples" compatibility="9.2.001" expanded="true" height="103" name="Build ReadFreq# dataset" width="90" x="447" y="34">
+                <parameter key="parameter_expression" value="(USER == %{readfreq_user1}) || (USER == %{readfreq_user2})"/>
+                <parameter key="condition_class" value="expression"/>
+                <parameter key="invert_filter" value="false"/>
+                <list key="filters_list">
+                  <parameter key="filters_entry_key" value="USER.eq.%{user1}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user2}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user3}"/>
+                </list>
+                <parameter key="filters_logic_and" value="true"/>
+                <parameter key="filters_check_metadata" value="true"/>
+              </operator>
+              <connect from_op="Retrieve ReaderAffectModel_TV_ReadFreq_1" from_port="output" to_op="Get ReadFreq!User" to_port="example set input"/>
+              <connect from_op="Get ReadFreq!User" from_port="example set output" to_op="Randomly select 2 ReadFreq!User" to_port="example set input"/>
+              <connect from_op="Get ReadFreq!User" from_port="original" to_op="Build ReadFreq# dataset" to_port="example set input"/>
+              <connect from_op="Randomly select 2 ReadFreq!User" from_port="example set output" to_op="Multiply: ReadFreq!User" to_port="input"/>
+              <connect from_op="Multiply: ReadFreq!User" from_port="output 1" to_op="readfreq_user" to_port="example set"/>
+              <connect from_op="Multiply: ReadFreq!User" from_port="output 2" to_op="readfreq_user (2)" to_port="example set"/>
+              <connect from_op="Build ReadFreq# dataset" from_port="example set output" to_port="out 1"/>
+              <portSpacing port="source_in 1" spacing="0"/>
+              <portSpacing port="source_in 2" spacing="0"/>
+              <portSpacing port="sink_out 1" spacing="0"/>
+              <portSpacing port="sink_out 2" spacing="0"/>
+            </process>
+          </operator>
+          <operator activated="true" class="subprocess" compatibility="9.2.001" expanded="true" height="82" name="Retrieve ReadFreq# Dataset (2)" width="90" x="45" y="136">
+            <process expanded="true">
+              <operator activated="true" class="retrieve" compatibility="9.2.001" expanded="true" height="68" name="Retrieve ReaderAffectModel_TV_ReadFreq_2 (2)" width="90" x="45" y="34">
+                <parameter key="repository_entry" value="//Local Repository/data/ReaderAffectModel_TV_ReadFreq_2"/>
+              </operator>
+              <operator activated="true" class="remove_duplicates" compatibility="9.2.001" expanded="true" height="82" name="Get ReadFreq!User (2)" width="90" x="179" y="34">
+                <parameter key="attribute_filter_type" value="single"/>
+                <parameter key="attribute" value="USER"/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="attribute_value"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="time"/>
+                <parameter key="block_type" value="attribute_block"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="false"/>
+                <parameter key="treat_missing_values_as_duplicates" value="false"/>
+              </operator>
+              <operator activated="true" class="sample" compatibility="9.2.001" expanded="true" height="82" name="Randomly select 2 ReadFreq!User (2)" width="90" x="179" y="187">
+                <parameter key="sample" value="absolute"/>
+                <parameter key="balance_data" value="false"/>
+                <parameter key="sample_size" value="2"/>
+                <parameter key="sample_ratio" value="0.1"/>
+                <parameter key="sample_probability" value="0.1"/>
+                <list key="sample_size_per_class"/>
+                <list key="sample_ratio_per_class"/>
+                <list key="sample_probability_per_class"/>
+                <parameter key="use_local_random_seed" value="true"/>
+                <parameter key="local_random_seed" value="1992"/>
+              </operator>
+              <operator activated="true" class="multiply" compatibility="9.2.001" expanded="true" height="103" name="Multiply: ReadFreq!User (2)" width="90" x="179" y="340"/>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readfreq_user (3)" width="90" x="313" y="442">
+                <parameter key="macro" value="readfreq_user2"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="2"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readfreq_user (4)" width="90" x="313" y="340">
+                <parameter key="macro" value="readfreq_user1"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="1"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="filter_examples" compatibility="9.2.001" expanded="true" height="103" name="Build ReadFreq# dataset (2)" width="90" x="447" y="34">
+                <parameter key="parameter_expression" value="(USER == %{readfreq_user1}) || (USER == %{readfreq_user2})"/>
+                <parameter key="condition_class" value="expression"/>
+                <parameter key="invert_filter" value="false"/>
+                <list key="filters_list">
+                  <parameter key="filters_entry_key" value="USER.eq.%{user1}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user2}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user3}"/>
+                </list>
+                <parameter key="filters_logic_and" value="true"/>
+                <parameter key="filters_check_metadata" value="true"/>
+              </operator>
+              <connect from_op="Retrieve ReaderAffectModel_TV_ReadFreq_2 (2)" from_port="output" to_op="Get ReadFreq!User (2)" to_port="example set input"/>
+              <connect from_op="Get ReadFreq!User (2)" from_port="example set output" to_op="Randomly select 2 ReadFreq!User (2)" to_port="example set input"/>
+              <connect from_op="Get ReadFreq!User (2)" from_port="original" to_op="Build ReadFreq# dataset (2)" to_port="example set input"/>
+              <connect from_op="Randomly select 2 ReadFreq!User (2)" from_port="example set output" to_op="Multiply: ReadFreq!User (2)" to_port="input"/>
+              <connect from_op="Multiply: ReadFreq!User (2)" from_port="output 1" to_op="readfreq_user (4)" to_port="example set"/>
+              <connect from_op="Multiply: ReadFreq!User (2)" from_port="output 2" to_op="readfreq_user (3)" to_port="example set"/>
+              <connect from_op="Build ReadFreq# dataset (2)" from_port="example set output" to_port="out 1"/>
+              <portSpacing port="source_in 1" spacing="0"/>
+              <portSpacing port="sink_out 1" spacing="0"/>
+              <portSpacing port="sink_out 2" spacing="0"/>
+            </process>
+          </operator>
+          <operator activated="true" class="subprocess" compatibility="9.2.001" expanded="true" height="82" name="Retrieve ReadFreq# Dataset (3)" width="90" x="45" y="238">
+            <process expanded="true">
+              <operator activated="true" class="retrieve" compatibility="9.2.001" expanded="true" height="68" name="Retrieve ReaderAffectModel_TV_ReadFreq_3 (3)" width="90" x="45" y="34">
+                <parameter key="repository_entry" value="//Local Repository/data/ReaderAffectModel_TV_ReadFreq_3"/>
+              </operator>
+              <operator activated="true" class="remove_duplicates" compatibility="9.2.001" expanded="true" height="82" name="Get ReadFreq!User (3)" width="90" x="179" y="34">
+                <parameter key="attribute_filter_type" value="single"/>
+                <parameter key="attribute" value="USER"/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="attribute_value"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="time"/>
+                <parameter key="block_type" value="attribute_block"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="false"/>
+                <parameter key="treat_missing_values_as_duplicates" value="false"/>
+              </operator>
+              <operator activated="true" class="sample" compatibility="9.2.001" expanded="true" height="82" name="Randomly select 2 ReadFreq!User (3)" width="90" x="179" y="187">
+                <parameter key="sample" value="absolute"/>
+                <parameter key="balance_data" value="false"/>
+                <parameter key="sample_size" value="2"/>
+                <parameter key="sample_ratio" value="0.1"/>
+                <parameter key="sample_probability" value="0.1"/>
+                <list key="sample_size_per_class"/>
+                <list key="sample_ratio_per_class"/>
+                <list key="sample_probability_per_class"/>
+                <parameter key="use_local_random_seed" value="true"/>
+                <parameter key="local_random_seed" value="1992"/>
+              </operator>
+              <operator activated="true" class="multiply" compatibility="9.2.001" expanded="true" height="103" name="Multiply: ReadFreq!User (3)" width="90" x="179" y="340"/>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readfreq_user (5)" width="90" x="313" y="442">
+                <parameter key="macro" value="readfreq_user2"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="2"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readfreq_user (6)" width="90" x="313" y="340">
+                <parameter key="macro" value="readfreq_user1"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="1"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="filter_examples" compatibility="9.2.001" expanded="true" height="103" name="Build ReadFreq# dataset (3)" width="90" x="447" y="34">
+                <parameter key="parameter_expression" value="(USER == %{readfreq_user1}) || (USER == %{readfreq_user2})"/>
+                <parameter key="condition_class" value="expression"/>
+                <parameter key="invert_filter" value="false"/>
+                <list key="filters_list">
+                  <parameter key="filters_entry_key" value="USER.eq.%{user1}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user2}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user3}"/>
+                </list>
+                <parameter key="filters_logic_and" value="true"/>
+                <parameter key="filters_check_metadata" value="true"/>
+              </operator>
+              <connect from_op="Retrieve ReaderAffectModel_TV_ReadFreq_3 (3)" from_port="output" to_op="Get ReadFreq!User (3)" to_port="example set input"/>
+              <connect from_op="Get ReadFreq!User (3)" from_port="example set output" to_op="Randomly select 2 ReadFreq!User (3)" to_port="example set input"/>
+              <connect from_op="Get ReadFreq!User (3)" from_port="original" to_op="Build ReadFreq# dataset (3)" to_port="example set input"/>
+              <connect from_op="Randomly select 2 ReadFreq!User (3)" from_port="example set output" to_op="Multiply: ReadFreq!User (3)" to_port="input"/>
+              <connect from_op="Multiply: ReadFreq!User (3)" from_port="output 1" to_op="readfreq_user (6)" to_port="example set"/>
+              <connect from_op="Multiply: ReadFreq!User (3)" from_port="output 2" to_op="readfreq_user (5)" to_port="example set"/>
+              <connect from_op="Build ReadFreq# dataset (3)" from_port="example set output" to_port="out 1"/>
+              <portSpacing port="source_in 1" spacing="0"/>
+              <portSpacing port="sink_out 1" spacing="0"/>
+              <portSpacing port="sink_out 2" spacing="0"/>
+            </process>
+          </operator>
+          <operator activated="true" class="subprocess" compatibility="9.2.001" expanded="true" height="82" name="Retrieve ReadFreq# Dataset (4)" width="90" x="45" y="340">
+            <process expanded="true">
+              <operator activated="true" class="retrieve" compatibility="9.2.001" expanded="true" height="68" name="Retrieve ReaderAffectModel_TV_ReadFreq_4 (4)" width="90" x="45" y="34">
+                <parameter key="repository_entry" value="//Local Repository/data/ReaderAffectModel_TV_ReadFreq_4"/>
+              </operator>
+              <operator activated="true" class="remove_duplicates" compatibility="9.2.001" expanded="true" height="82" name="Get ReadFreq!User (4)" width="90" x="179" y="34">
+                <parameter key="attribute_filter_type" value="single"/>
+                <parameter key="attribute" value="USER"/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="attribute_value"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="time"/>
+                <parameter key="block_type" value="attribute_block"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="false"/>
+                <parameter key="treat_missing_values_as_duplicates" value="false"/>
+              </operator>
+              <operator activated="true" class="sample" compatibility="9.2.001" expanded="true" height="82" name="Randomly select 2 ReadFreq!User (4)" width="90" x="179" y="187">
+                <parameter key="sample" value="absolute"/>
+                <parameter key="balance_data" value="false"/>
+                <parameter key="sample_size" value="2"/>
+                <parameter key="sample_ratio" value="0.1"/>
+                <parameter key="sample_probability" value="0.1"/>
+                <list key="sample_size_per_class"/>
+                <list key="sample_ratio_per_class"/>
+                <list key="sample_probability_per_class"/>
+                <parameter key="use_local_random_seed" value="true"/>
+                <parameter key="local_random_seed" value="1992"/>
+              </operator>
+              <operator activated="true" class="multiply" compatibility="9.2.001" expanded="true" height="103" name="Multiply: ReadFreq!User (4)" width="90" x="179" y="340"/>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readfreq_user (7)" width="90" x="313" y="442">
+                <parameter key="macro" value="readfreq_user2"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="2"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="extract_macro" compatibility="9.2.001" expanded="true" height="68" name="readfreq_user (8)" width="90" x="313" y="340">
+                <parameter key="macro" value="readfreq_user1"/>
+                <parameter key="macro_type" value="data_value"/>
+                <parameter key="statistics" value="average"/>
+                <parameter key="attribute_name" value="USER"/>
+                <parameter key="example_index" value="1"/>
+                <list key="additional_macros"/>
+              </operator>
+              <operator activated="true" class="filter_examples" compatibility="9.2.001" expanded="true" height="103" name="Build ReadFreq# dataset (4)" width="90" x="447" y="34">
+                <parameter key="parameter_expression" value="(USER == %{readfreq_user1}) || (USER == %{readfreq_user2})"/>
+                <parameter key="condition_class" value="expression"/>
+                <parameter key="invert_filter" value="false"/>
+                <list key="filters_list">
+                  <parameter key="filters_entry_key" value="USER.eq.%{user1}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user2}"/>
+                  <parameter key="filters_entry_key" value="USER.eq.%{user3}"/>
+                </list>
+                <parameter key="filters_logic_and" value="true"/>
+                <parameter key="filters_check_metadata" value="true"/>
+              </operator>
+              <connect from_op="Retrieve ReaderAffectModel_TV_ReadFreq_4 (4)" from_port="output" to_op="Get ReadFreq!User (4)" to_port="example set input"/>
+              <connect from_op="Get ReadFreq!User (4)" from_port="example set output" to_op="Randomly select 2 ReadFreq!User (4)" to_port="example set input"/>
+              <connect from_op="Get ReadFreq!User (4)" from_port="original" to_op="Build ReadFreq# dataset (4)" to_port="example set input"/>
+              <connect from_op="Randomly select 2 ReadFreq!User (4)" from_port="example set output" to_op="Multiply: ReadFreq!User (4)" to_port="input"/>
+              <connect from_op="Multiply: ReadFreq!User (4)" from_port="output 1" to_op="readfreq_user (8)" to_port="example set"/>
+              <connect from_op="Multiply: ReadFreq!User (4)" from_port="output 2" to_op="readfreq_user (7)" to_port="example set"/>
+              <connect from_op="Build ReadFreq# dataset (4)" from_port="example set output" to_port="out 1"/>
+              <portSpacing port="source_in 1" spacing="0"/>
+              <portSpacing port="sink_out 1" spacing="0"/>
+              <portSpacing port="sink_out 2" spacing="0"/>
+            </process>
+          </operator>
+          <operator activated="true" class="append" compatibility="9.2.001" expanded="true" height="145" name="Append: RF" width="90" x="179" y="34">
+            <parameter key="datamanagement" value="double_array"/>
+            <parameter key="data_management" value="auto"/>
+            <parameter key="merge_type" value="all"/>
+          </operator>
+          <connect from_port="input 1" to_op="Retrieve ReadFreq# Dataset" to_port="in 1"/>
+          <connect from_op="Retrieve ReadFreq# Dataset" from_port="out 1" to_op="Append: RF" to_port="example set 1"/>
+          <connect from_op="Retrieve ReadFreq# Dataset (2)" from_port="out 1" to_op="Append: RF" to_port="example set 2"/>
+          <connect from_op="Retrieve ReadFreq# Dataset (3)" from_port="out 1" to_op="Append: RF" to_port="example set 3"/>
+          <connect from_op="Retrieve ReadFreq# Dataset (4)" from_port="out 1" to_op="Append: RF" to_port="example set 4"/>
+          <connect from_op="Append: RF" from_port="merged set" to_port="output 1"/>
+          <portSpacing port="source_input 1" spacing="0"/>
+          <portSpacing port="source_input 2" spacing="0"/>
+          <portSpacing port="sink_output 1" spacing="0"/>
+          <portSpacing port="sink_output 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="subprocess" compatibility="9.2.001" expanded="true" height="82" name="Dataset blending/cleansing" width="90" x="179" y="187">
+        <process expanded="true">
+          <operator activated="true" class="generate_attributes" compatibility="9.2.001" expanded="true" height="82" name="Create ID column" width="90" x="45" y="34">
+            <list key="function_descriptions">
+              <parameter key="ID" value="concat(str(USER),&quot;_&quot;,str(SEG),&quot;_&quot;,str(WIN))"/>
+            </list>
+            <parameter key="keep_all" value="true"/>
+          </operator>
+          <operator activated="true" class="set_role" compatibility="9.2.001" expanded="true" height="82" name="Set ID role; Set USER as batch" width="90" x="246" y="34">
+            <parameter key="attribute_name" value="ID"/>
+            <parameter key="target_role" value="id"/>
+            <list key="set_additional_roles">
+              <parameter key="USER" value="batch"/>
+            </list>
+          </operator>
+          <operator activated="true" class="discretize_by_user_specification" compatibility="9.2.001" expanded="true" height="103" name="Change &lt;LABEL&gt; values as high/low" width="90" x="447" y="34">
+            <parameter key="return_preprocessing_model" value="false"/>
+            <parameter key="create_view" value="false"/>
+            <parameter key="attribute_filter_type" value="subset"/>
+            <parameter key="attribute" value="PLEASANTNESS"/>
+            <parameter key="attributes" value="|CLASS_SENSITIVITY|CLASS_PLEASANTNESS|CLASS_ATTENTION|CLASS_APPTITUDE"/>
+            <parameter key="use_except_expression" value="false"/>
+            <parameter key="value_type" value="numeric"/>
+            <parameter key="use_value_type_exception" value="false"/>
+            <parameter key="except_value_type" value="real"/>
+            <parameter key="block_type" value="value_series"/>
+            <parameter key="use_block_type_exception" value="false"/>
+            <parameter key="except_block_type" value="value_series_end"/>
+            <parameter key="invert_selection" value="false"/>
+            <parameter key="include_special_attributes" value="false"/>
+            <list key="classes">
+              <parameter key="high" value="9.0"/>
+              <parameter key="low" value="0.0"/>
+            </list>
+          </operator>
+          <operator activated="true" class="nominal_to_binominal" compatibility="9.2.001" expanded="true" height="103" name="Nominal to Binominal" width="90" x="648" y="34">
+            <parameter key="return_preprocessing_model" value="false"/>
+            <parameter key="create_view" value="false"/>
+            <parameter key="attribute_filter_type" value="subset"/>
+            <parameter key="attribute" value=""/>
+            <parameter key="attributes" value="CLASS_SENSITIVITY|CLASS_PLEASANTNESS|CLASS_ATTENTION|CLASS_APPTITUDE"/>
+            <parameter key="use_except_expression" value="false"/>
+            <parameter key="value_type" value="nominal"/>
+            <parameter key="use_value_type_exception" value="false"/>
+            <parameter key="except_value_type" value="file_path"/>
+            <parameter key="block_type" value="single_value"/>
+            <parameter key="use_block_type_exception" value="false"/>
+            <parameter key="except_block_type" value="single_value"/>
+            <parameter key="invert_selection" value="false"/>
+            <parameter key="include_special_attributes" value="false"/>
+            <parameter key="transform_binominal" value="false"/>
+            <parameter key="use_underscore_in_name" value="false"/>
+          </operator>
+          <connect from_port="in 1" to_op="Create ID column" to_port="example set input"/>
+          <connect from_op="Create ID column" from_port="example set output" to_op="Set ID role; Set USER as batch" to_port="example set input"/>
+          <connect from_op="Set ID role; Set USER as batch" from_port="example set output" to_op="Change &lt;LABEL&gt; values as high/low" to_port="example set input"/>
+          <connect from_op="Change &lt;LABEL&gt; values as high/low" from_port="example set output" to_op="Nominal to Binominal" to_port="example set input"/>
+          <connect from_op="Nominal to Binominal" from_port="example set output" to_port="out 1"/>
+          <portSpacing port="source_in 1" spacing="0"/>
+          <portSpacing port="source_in 2" spacing="0"/>
+          <portSpacing port="sink_out 1" spacing="0"/>
+          <portSpacing port="sink_out 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="concurrency:loop" compatibility="8.2.000" expanded="true" height="124" name="Loop &lt;LABEL&gt;" width="90" x="380" y="34">
+        <parameter key="number_of_iterations" value="4"/>
+        <parameter key="iteration_macro" value="label"/>
+        <parameter key="reuse_results" value="false"/>
+        <parameter key="enable_parallel_execution" value="true"/>
+        <process expanded="true">
+          <operator activated="true" class="select_subprocess" compatibility="9.2.001" expanded="true" height="82" name="Switch &lt;LABEL&gt;" width="90" x="45" y="34">
+            <parameter key="select_which" value="%{label}"/>
+            <process expanded="true">
+              <operator activated="true" class="set_role" compatibility="9.2.001" expanded="true" height="82" name="Label: APPTITUDE" width="90" x="45" y="34">
+                <parameter key="attribute_name" value="CLASS_APPTITUDE"/>
+                <parameter key="target_role" value="label"/>
+                <list key="set_additional_roles"/>
+              </operator>
+              <operator activated="true" class="select_attributes" compatibility="9.2.001" expanded="true" height="82" name="Select: APPTITUDE" width="90" x="45" y="238">
+                <parameter key="attribute_filter_type" value="subset"/>
+                <parameter key="attribute" value=""/>
+                <parameter key="attributes" value="ID|alpha_AF3_avgMag|alpha_AF3_avgPSD|alpha_AF3_maxMag|alpha_AF3_maxPSD|alpha_AF3_minMag|alpha_AF3_minPSD|alpha_AF4_avgMag|alpha_AF4_avgPSD|alpha_AF4_maxMag|alpha_AF4_maxPSD|alpha_AF4_minMag|alpha_AF4_minPSD|alpha_AF_avgDASM|alpha_AF_avgRASM|alpha_AF_maxDASM|alpha_AF_maxRASM|alpha_AF_minDASM|alpha_AF_minRASM|alpha_Pz_avgMag|alpha_Pz_avgPSD|alpha_Pz_maxMag|alpha_Pz_maxPSD|alpha_Pz_minMag|alpha_Pz_minPSD|alpha_T7_avgMag|alpha_T7_avgPSD|alpha_T7_maxMag|alpha_T7_maxPSD|alpha_T7_minMag|alpha_T7_minPSD|alpha_T8_avgMag|alpha_T8_avgPSD|alpha_T8_maxMag|alpha_T8_maxPSD|alpha_T8_minMag|alpha_T8_minPSD|alpha_T_avgDASM|alpha_T_avgRASM|alpha_T_maxDASM|alpha_T_maxRASM|alpha_T_minDASM|alpha_T_minRASM|betaHi_AF3_avgMag|betaHi_AF3_avgPSD|betaHi_AF3_maxMag|betaHi_AF3_maxPSD|betaHi_AF3_minMag|betaHi_AF3_minPSD|betaHi_AF4_avgMag|betaHi_AF4_avgPSD|betaHi_AF4_maxMag|betaHi_AF4_maxPSD|betaHi_AF4_minMag|betaHi_AF4_minPSD|betaHi_AF_avgDASM|betaHi_AF_avgRASM|betaHi_AF_maxDASM|betaHi_AF_maxRASM|betaHi_AF_minDASM|betaHi_AF_minRASM|betaHi_Pz_avgMag|betaHi_Pz_avgPSD|betaHi_Pz_maxMag|betaHi_Pz_maxPSD|betaHi_Pz_minMag|betaHi_Pz_minPSD|betaHi_T7_avgMag|betaHi_T7_avgPSD|betaHi_T7_maxMag|betaHi_T7_maxPSD|betaHi_T7_minMag|betaHi_T7_minPSD|betaHi_T8_avgMag|betaHi_T8_avgPSD|betaHi_T8_maxMag|betaHi_T8_maxPSD|betaHi_T8_minMag|betaHi_T8_minPSD|betaHi_T_avgDASM|betaHi_T_avgRASM|betaHi_T_maxDASM|betaHi_T_maxRASM|betaHi_T_minDASM|betaHi_T_minRASM|betaLo_AF3_avgMag|betaLo_AF3_avgPSD|betaLo_AF3_maxMag|betaLo_AF3_maxPSD|betaLo_AF3_minMag|betaLo_AF3_minPSD|betaLo_AF4_avgMag|betaLo_AF4_avgPSD|betaLo_AF4_maxMag|betaLo_AF4_maxPSD|betaLo_AF4_minMag|betaLo_AF4_minPSD|betaLo_AF_avgDASM|betaLo_AF_avgRASM|betaLo_AF_maxDASM|betaLo_AF_maxRASM|betaLo_AF_minDASM|betaLo_AF_minRASM|betaLo_Pz_avgMag|betaLo_Pz_avgPSD|betaLo_Pz_maxMag|betaLo_Pz_maxPSD|betaLo_Pz_minMag|betaLo_Pz_minPSD|betaLo_T7_avgMag|betaLo_T7_avgPSD|betaLo_T7_maxMag|betaLo_T7_maxPSD|betaLo_T7_minMag|betaLo_T7_minPSD|betaLo_T8_avgMag|betaLo_T8_avgPSD|betaLo_T8_maxMag|betaLo_T8_maxPSD|betaLo_T8_minMag|betaLo_T8_minPSD|betaLo_T_avgDASM|betaLo_T_avgRASM|betaLo_T_maxDASM|betaLo_T_maxRASM|betaLo_T_minDASM|betaLo_T_minRASM|betaMd_AF3_avgMag|betaMd_AF3_avgPSD|betaMd_AF3_maxMag|betaMd_AF3_maxPSD|betaMd_AF3_minMag|betaMd_AF3_minPSD|betaMd_AF4_avgMag|betaMd_AF4_avgPSD|betaMd_AF4_maxMag|betaMd_AF4_maxPSD|betaMd_AF4_minMag|betaMd_AF4_minPSD|betaMd_AF_avgDASM|betaMd_AF_avgRASM|betaMd_AF_maxDASM|betaMd_AF_maxRASM|betaMd_AF_minDASM|betaMd_AF_minRASM|betaMd_Pz_avgMag|betaMd_Pz_avgPSD|betaMd_Pz_maxMag|betaMd_Pz_maxPSD|betaMd_Pz_minMag|betaMd_Pz_minPSD|betaMd_T7_avgMag|betaMd_T7_avgPSD|betaMd_T7_maxMag|betaMd_T7_maxPSD|betaMd_T7_minMag|betaMd_T7_minPSD|betaMd_T8_avgMag|betaMd_T8_avgPSD|betaMd_T8_maxMag|betaMd_T8_maxPSD|betaMd_T8_minMag|betaMd_T8_minPSD|betaMd_T_avgDASM|betaMd_T_avgRASM|betaMd_T_maxDASM|betaMd_T_maxRASM|betaMd_T_minDASM|betaMd_T_minRASM|gamma_AF3_avgMag|gamma_AF3_avgPSD|gamma_AF3_maxMag|gamma_AF3_maxPSD|gamma_AF3_minMag|gamma_AF3_minPSD|gamma_AF4_avgMag|gamma_AF4_avgPSD|gamma_AF4_maxMag|gamma_AF4_maxPSD|gamma_AF4_minMag|gamma_AF4_minPSD|gamma_AF_avgDASM|gamma_AF_avgRASM|gamma_AF_maxDASM|gamma_AF_maxRASM|gamma_AF_minDASM|gamma_AF_minRASM|gamma_Pz_avgMag|gamma_Pz_avgPSD|gamma_Pz_maxMag|gamma_Pz_maxPSD|gamma_Pz_minMag|gamma_Pz_minPSD|gamma_T7_avgMag|gamma_T7_avgPSD|gamma_T7_maxMag|gamma_T7_maxPSD|gamma_T7_minMag|gamma_T7_minPSD|gamma_T8_avgMag|gamma_T8_avgPSD|gamma_T8_maxMag|gamma_T8_maxPSD|gamma_T8_minMag|gamma_T8_minPSD|gamma_T_avgDASM|gamma_T_avgRASM|gamma_T_maxDASM|gamma_T_maxRASM|gamma_T_minDASM|gamma_T_minRASM|theta_AF3_avgMag|theta_AF3_avgPSD|theta_AF3_maxMag|theta_AF3_maxPSD|theta_AF3_minMag|theta_AF3_minPSD|theta_AF4_avgMag|theta_AF4_avgPSD|theta_AF4_maxMag|theta_AF4_maxPSD|theta_AF4_minMag|theta_AF4_minPSD|theta_AF_avgDASM|theta_AF_avgRASM|theta_AF_maxDASM|theta_AF_maxRASM|theta_AF_minDASM|theta_AF_minRASM|theta_Pz_avgMag|theta_Pz_avgPSD|theta_Pz_maxMag|theta_Pz_maxPSD|theta_Pz_minMag|theta_Pz_minPSD|theta_T7_avgMag|theta_T7_avgPSD|theta_T7_maxMag|theta_T7_maxPSD|theta_T7_minMag|theta_T7_minPSD|theta_T8_avgMag|theta_T8_avgPSD|theta_T8_maxMag|theta_T8_maxPSD|theta_T8_minMag|theta_T8_minPSD|theta_T_avgDASM|theta_T_avgRASM|theta_T_maxDASM|theta_T_maxRASM|theta_T_minDASM|theta_T_minRASM|CLASS_APPTITUDE"/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="attribute_value"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="time"/>
+                <parameter key="block_type" value="attribute_block"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="false"/>
+              </operator>
+              <connect from_port="input 1" to_op="Label: APPTITUDE" to_port="example set input"/>
+              <connect from_op="Label: APPTITUDE" from_port="example set output" to_op="Select: APPTITUDE" to_port="example set input"/>
+              <connect from_op="Select: APPTITUDE" from_port="example set output" to_port="output 1"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="source_input 2" spacing="0"/>
+              <portSpacing port="sink_output 1" spacing="0"/>
+              <portSpacing port="sink_output 2" spacing="0"/>
+            </process>
+            <process expanded="true">
+              <operator activated="true" class="set_role" compatibility="9.2.001" expanded="true" height="82" name="Label: ATTENTION" width="90" x="45" y="34">
+                <parameter key="attribute_name" value="CLASS_ATTENTION"/>
+                <parameter key="target_role" value="label"/>
+                <list key="set_additional_roles"/>
+              </operator>
+              <operator activated="true" class="select_attributes" compatibility="9.2.001" expanded="true" height="82" name="Select: ATTENTION" width="90" x="45" y="238">
+                <parameter key="attribute_filter_type" value="subset"/>
+                <parameter key="attribute" value=""/>
+                <parameter key="attributes" value="ID|alpha_AF3_avgMag|alpha_AF3_avgPSD|alpha_AF3_maxMag|alpha_AF3_maxPSD|alpha_AF3_minMag|alpha_AF3_minPSD|alpha_AF4_avgMag|alpha_AF4_avgPSD|alpha_AF4_maxMag|alpha_AF4_maxPSD|alpha_AF4_minMag|alpha_AF4_minPSD|alpha_AF_avgDASM|alpha_AF_avgRASM|alpha_AF_maxDASM|alpha_AF_maxRASM|alpha_AF_minDASM|alpha_AF_minRASM|alpha_Pz_avgMag|alpha_Pz_avgPSD|alpha_Pz_maxMag|alpha_Pz_maxPSD|alpha_Pz_minMag|alpha_Pz_minPSD|alpha_T7_avgMag|alpha_T7_avgPSD|alpha_T7_maxMag|alpha_T7_maxPSD|alpha_T7_minMag|alpha_T7_minPSD|alpha_T8_avgMag|alpha_T8_avgPSD|alpha_T8_maxMag|alpha_T8_maxPSD|alpha_T8_minMag|alpha_T8_minPSD|alpha_T_avgDASM|alpha_T_avgRASM|alpha_T_maxDASM|alpha_T_maxRASM|alpha_T_minDASM|alpha_T_minRASM|betaHi_AF3_avgMag|betaHi_AF3_avgPSD|betaHi_AF3_maxMag|betaHi_AF3_maxPSD|betaHi_AF3_minMag|betaHi_AF3_minPSD|betaHi_AF4_avgMag|betaHi_AF4_avgPSD|betaHi_AF4_maxMag|betaHi_AF4_maxPSD|betaHi_AF4_minMag|betaHi_AF4_minPSD|betaHi_AF_avgDASM|betaHi_AF_avgRASM|betaHi_AF_maxDASM|betaHi_AF_maxRASM|betaHi_AF_minDASM|betaHi_AF_minRASM|betaHi_Pz_avgMag|betaHi_Pz_avgPSD|betaHi_Pz_maxMag|betaHi_Pz_maxPSD|betaHi_Pz_minMag|betaHi_Pz_minPSD|betaHi_T7_avgMag|betaHi_T7_avgPSD|betaHi_T7_maxMag|betaHi_T7_maxPSD|betaHi_T7_minMag|betaHi_T7_minPSD|betaHi_T8_avgMag|betaHi_T8_avgPSD|betaHi_T8_maxMag|betaHi_T8_maxPSD|betaHi_T8_minMag|betaHi_T8_minPSD|betaHi_T_avgDASM|betaHi_T_avgRASM|betaHi_T_maxDASM|betaHi_T_maxRASM|betaHi_T_minDASM|betaHi_T_minRASM|betaLo_AF3_avgMag|betaLo_AF3_avgPSD|betaLo_AF3_maxMag|betaLo_AF3_maxPSD|betaLo_AF3_minMag|betaLo_AF3_minPSD|betaLo_AF4_avgMag|betaLo_AF4_avgPSD|betaLo_AF4_maxMag|betaLo_AF4_maxPSD|betaLo_AF4_minMag|betaLo_AF4_minPSD|betaLo_AF_avgDASM|betaLo_AF_avgRASM|betaLo_AF_maxDASM|betaLo_AF_maxRASM|betaLo_AF_minDASM|betaLo_AF_minRASM|betaLo_Pz_avgMag|betaLo_Pz_avgPSD|betaLo_Pz_maxMag|betaLo_Pz_maxPSD|betaLo_Pz_minMag|betaLo_Pz_minPSD|betaLo_T7_avgMag|betaLo_T7_avgPSD|betaLo_T7_maxMag|betaLo_T7_maxPSD|betaLo_T7_minMag|betaLo_T7_minPSD|betaLo_T8_avgMag|betaLo_T8_avgPSD|betaLo_T8_maxMag|betaLo_T8_maxPSD|betaLo_T8_minMag|betaLo_T8_minPSD|betaLo_T_avgDASM|betaLo_T_avgRASM|betaLo_T_maxDASM|betaLo_T_maxRASM|betaLo_T_minDASM|betaLo_T_minRASM|betaMd_AF3_avgMag|betaMd_AF3_avgPSD|betaMd_AF3_maxMag|betaMd_AF3_maxPSD|betaMd_AF3_minMag|betaMd_AF3_minPSD|betaMd_AF4_avgMag|betaMd_AF4_avgPSD|betaMd_AF4_maxMag|betaMd_AF4_maxPSD|betaMd_AF4_minMag|betaMd_AF4_minPSD|betaMd_AF_avgDASM|betaMd_AF_avgRASM|betaMd_AF_maxDASM|betaMd_AF_maxRASM|betaMd_AF_minDASM|betaMd_AF_minRASM|betaMd_Pz_avgMag|betaMd_Pz_avgPSD|betaMd_Pz_maxMag|betaMd_Pz_maxPSD|betaMd_Pz_minMag|betaMd_Pz_minPSD|betaMd_T7_avgMag|betaMd_T7_avgPSD|betaMd_T7_maxMag|betaMd_T7_maxPSD|betaMd_T7_minMag|betaMd_T7_minPSD|betaMd_T8_avgMag|betaMd_T8_avgPSD|betaMd_T8_maxMag|betaMd_T8_maxPSD|betaMd_T8_minMag|betaMd_T8_minPSD|betaMd_T_avgDASM|betaMd_T_avgRASM|betaMd_T_maxDASM|betaMd_T_maxRASM|betaMd_T_minDASM|betaMd_T_minRASM|gamma_AF3_avgMag|gamma_AF3_avgPSD|gamma_AF3_maxMag|gamma_AF3_maxPSD|gamma_AF3_minMag|gamma_AF3_minPSD|gamma_AF4_avgMag|gamma_AF4_avgPSD|gamma_AF4_maxMag|gamma_AF4_maxPSD|gamma_AF4_minMag|gamma_AF4_minPSD|gamma_AF_avgDASM|gamma_AF_avgRASM|gamma_AF_maxDASM|gamma_AF_maxRASM|gamma_AF_minDASM|gamma_AF_minRASM|gamma_Pz_avgMag|gamma_Pz_avgPSD|gamma_Pz_maxMag|gamma_Pz_maxPSD|gamma_Pz_minMag|gamma_Pz_minPSD|gamma_T7_avgMag|gamma_T7_avgPSD|gamma_T7_maxMag|gamma_T7_maxPSD|gamma_T7_minMag|gamma_T7_minPSD|gamma_T8_avgMag|gamma_T8_avgPSD|gamma_T8_maxMag|gamma_T8_maxPSD|gamma_T8_minMag|gamma_T8_minPSD|gamma_T_avgDASM|gamma_T_avgRASM|gamma_T_maxDASM|gamma_T_maxRASM|gamma_T_minDASM|gamma_T_minRASM|theta_AF3_avgMag|theta_AF3_avgPSD|theta_AF3_maxMag|theta_AF3_maxPSD|theta_AF3_minMag|theta_AF3_minPSD|theta_AF4_avgMag|theta_AF4_avgPSD|theta_AF4_maxMag|theta_AF4_maxPSD|theta_AF4_minMag|theta_AF4_minPSD|theta_AF_avgDASM|theta_AF_avgRASM|theta_AF_maxDASM|theta_AF_maxRASM|theta_AF_minDASM|theta_AF_minRASM|theta_Pz_avgMag|theta_Pz_avgPSD|theta_Pz_maxMag|theta_Pz_maxPSD|theta_Pz_minMag|theta_Pz_minPSD|theta_T7_avgMag|theta_T7_avgPSD|theta_T7_maxMag|theta_T7_maxPSD|theta_T7_minMag|theta_T7_minPSD|theta_T8_avgMag|theta_T8_avgPSD|theta_T8_maxMag|theta_T8_maxPSD|theta_T8_minMag|theta_T8_minPSD|theta_T_avgDASM|theta_T_avgRASM|theta_T_maxDASM|theta_T_maxRASM|theta_T_minDASM|theta_T_minRASM|CLASS_ATTENTION"/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="attribute_value"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="time"/>
+                <parameter key="block_type" value="attribute_block"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="false"/>
+              </operator>
+              <connect from_port="input 1" to_op="Label: ATTENTION" to_port="example set input"/>
+              <connect from_op="Label: ATTENTION" from_port="example set output" to_op="Select: ATTENTION" to_port="example set input"/>
+              <connect from_op="Select: ATTENTION" from_port="example set output" to_port="output 1"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="source_input 2" spacing="0"/>
+              <portSpacing port="sink_output 1" spacing="0"/>
+              <portSpacing port="sink_output 2" spacing="0"/>
+            </process>
+            <process expanded="true">
+              <operator activated="true" class="set_role" compatibility="9.2.001" expanded="true" height="82" name="Label: PLEASANTNESS" width="90" x="45" y="34">
+                <parameter key="attribute_name" value="CLASS_PLEASANTNESS"/>
+                <parameter key="target_role" value="label"/>
+                <list key="set_additional_roles"/>
+              </operator>
+              <operator activated="true" class="select_attributes" compatibility="9.2.001" expanded="true" height="82" name="Select: PLEASANTNESS" width="90" x="45" y="238">
+                <parameter key="attribute_filter_type" value="subset"/>
+                <parameter key="attribute" value=""/>
+                <parameter key="attributes" value="ID|alpha_AF3_avgMag|alpha_AF3_avgPSD|alpha_AF3_maxMag|alpha_AF3_maxPSD|alpha_AF3_minMag|alpha_AF3_minPSD|alpha_AF4_avgMag|alpha_AF4_avgPSD|alpha_AF4_maxMag|alpha_AF4_maxPSD|alpha_AF4_minMag|alpha_AF4_minPSD|alpha_AF_avgDASM|alpha_AF_avgRASM|alpha_AF_maxDASM|alpha_AF_maxRASM|alpha_AF_minDASM|alpha_AF_minRASM|alpha_Pz_avgMag|alpha_Pz_avgPSD|alpha_Pz_maxMag|alpha_Pz_maxPSD|alpha_Pz_minMag|alpha_Pz_minPSD|alpha_T7_avgMag|alpha_T7_avgPSD|alpha_T7_maxMag|alpha_T7_maxPSD|alpha_T7_minMag|alpha_T7_minPSD|alpha_T8_avgMag|alpha_T8_avgPSD|alpha_T8_maxMag|alpha_T8_maxPSD|alpha_T8_minMag|alpha_T8_minPSD|alpha_T_avgDASM|alpha_T_avgRASM|alpha_T_maxDASM|alpha_T_maxRASM|alpha_T_minDASM|alpha_T_minRASM|betaHi_AF3_avgMag|betaHi_AF3_avgPSD|betaHi_AF3_maxMag|betaHi_AF3_maxPSD|betaHi_AF3_minMag|betaHi_AF3_minPSD|betaHi_AF4_avgMag|betaHi_AF4_avgPSD|betaHi_AF4_maxMag|betaHi_AF4_maxPSD|betaHi_AF4_minMag|betaHi_AF4_minPSD|betaHi_AF_avgDASM|betaHi_AF_avgRASM|betaHi_AF_maxDASM|betaHi_AF_maxRASM|betaHi_AF_minDASM|betaHi_AF_minRASM|betaHi_Pz_avgMag|betaHi_Pz_avgPSD|betaHi_Pz_maxMag|betaHi_Pz_maxPSD|betaHi_Pz_minMag|betaHi_Pz_minPSD|betaHi_T7_avgMag|betaHi_T7_avgPSD|betaHi_T7_maxMag|betaHi_T7_maxPSD|betaHi_T7_minMag|betaHi_T7_minPSD|betaHi_T8_avgMag|betaHi_T8_avgPSD|betaHi_T8_maxMag|betaHi_T8_maxPSD|betaHi_T8_minMag|betaHi_T8_minPSD|betaHi_T_avgDASM|betaHi_T_avgRASM|betaHi_T_maxDASM|betaHi_T_maxRASM|betaHi_T_minDASM|betaHi_T_minRASM|betaLo_AF3_avgMag|betaLo_AF3_avgPSD|betaLo_AF3_maxMag|betaLo_AF3_maxPSD|betaLo_AF3_minMag|betaLo_AF3_minPSD|betaLo_AF4_avgMag|betaLo_AF4_avgPSD|betaLo_AF4_maxMag|betaLo_AF4_maxPSD|betaLo_AF4_minMag|betaLo_AF4_minPSD|betaLo_AF_avgDASM|betaLo_AF_avgRASM|betaLo_AF_maxDASM|betaLo_AF_maxRASM|betaLo_AF_minDASM|betaLo_AF_minRASM|betaLo_Pz_avgMag|betaLo_Pz_avgPSD|betaLo_Pz_maxMag|betaLo_Pz_maxPSD|betaLo_Pz_minMag|betaLo_Pz_minPSD|betaLo_T7_avgMag|betaLo_T7_avgPSD|betaLo_T7_maxMag|betaLo_T7_maxPSD|betaLo_T7_minMag|betaLo_T7_minPSD|betaLo_T8_avgMag|betaLo_T8_avgPSD|betaLo_T8_maxMag|betaLo_T8_maxPSD|betaLo_T8_minMag|betaLo_T8_minPSD|betaLo_T_avgDASM|betaLo_T_avgRASM|betaLo_T_maxDASM|betaLo_T_maxRASM|betaLo_T_minDASM|betaLo_T_minRASM|betaMd_AF3_avgMag|betaMd_AF3_avgPSD|betaMd_AF3_maxMag|betaMd_AF3_maxPSD|betaMd_AF3_minMag|betaMd_AF3_minPSD|betaMd_AF4_avgMag|betaMd_AF4_avgPSD|betaMd_AF4_maxMag|betaMd_AF4_maxPSD|betaMd_AF4_minMag|betaMd_AF4_minPSD|betaMd_AF_avgDASM|betaMd_AF_avgRASM|betaMd_AF_maxDASM|betaMd_AF_maxRASM|betaMd_AF_minDASM|betaMd_AF_minRASM|betaMd_Pz_avgMag|betaMd_Pz_avgPSD|betaMd_Pz_maxMag|betaMd_Pz_maxPSD|betaMd_Pz_minMag|betaMd_Pz_minPSD|betaMd_T7_avgMag|betaMd_T7_avgPSD|betaMd_T7_maxMag|betaMd_T7_maxPSD|betaMd_T7_minMag|betaMd_T7_minPSD|betaMd_T8_avgMag|betaMd_T8_avgPSD|betaMd_T8_maxMag|betaMd_T8_maxPSD|betaMd_T8_minMag|betaMd_T8_minPSD|betaMd_T_avgDASM|betaMd_T_avgRASM|betaMd_T_maxDASM|betaMd_T_maxRASM|betaMd_T_minDASM|betaMd_T_minRASM|gamma_AF3_avgMag|gamma_AF3_avgPSD|gamma_AF3_maxMag|gamma_AF3_maxPSD|gamma_AF3_minMag|gamma_AF3_minPSD|gamma_AF4_avgMag|gamma_AF4_avgPSD|gamma_AF4_maxMag|gamma_AF4_maxPSD|gamma_AF4_minMag|gamma_AF4_minPSD|gamma_AF_avgDASM|gamma_AF_avgRASM|gamma_AF_maxDASM|gamma_AF_maxRASM|gamma_AF_minDASM|gamma_AF_minRASM|gamma_Pz_avgMag|gamma_Pz_avgPSD|gamma_Pz_maxMag|gamma_Pz_maxPSD|gamma_Pz_minMag|gamma_Pz_minPSD|gamma_T7_avgMag|gamma_T7_avgPSD|gamma_T7_maxMag|gamma_T7_maxPSD|gamma_T7_minMag|gamma_T7_minPSD|gamma_T8_avgMag|gamma_T8_avgPSD|gamma_T8_maxMag|gamma_T8_maxPSD|gamma_T8_minMag|gamma_T8_minPSD|gamma_T_avgDASM|gamma_T_avgRASM|gamma_T_maxDASM|gamma_T_maxRASM|gamma_T_minDASM|gamma_T_minRASM|theta_AF3_avgMag|theta_AF3_avgPSD|theta_AF3_maxMag|theta_AF3_maxPSD|theta_AF3_minMag|theta_AF3_minPSD|theta_AF4_avgMag|theta_AF4_avgPSD|theta_AF4_maxMag|theta_AF4_maxPSD|theta_AF4_minMag|theta_AF4_minPSD|theta_AF_avgDASM|theta_AF_avgRASM|theta_AF_maxDASM|theta_AF_maxRASM|theta_AF_minDASM|theta_AF_minRASM|theta_Pz_avgMag|theta_Pz_avgPSD|theta_Pz_maxMag|theta_Pz_maxPSD|theta_Pz_minMag|theta_Pz_minPSD|theta_T7_avgMag|theta_T7_avgPSD|theta_T7_maxMag|theta_T7_maxPSD|theta_T7_minMag|theta_T7_minPSD|theta_T8_avgMag|theta_T8_avgPSD|theta_T8_maxMag|theta_T8_maxPSD|theta_T8_minMag|theta_T8_minPSD|theta_T_avgDASM|theta_T_avgRASM|theta_T_maxDASM|theta_T_maxRASM|theta_T_minDASM|theta_T_minRASM|CLASS_PLEASANTNESS"/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="attribute_value"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="time"/>
+                <parameter key="block_type" value="attribute_block"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="false"/>
+              </operator>
+              <connect from_port="input 1" to_op="Label: PLEASANTNESS" to_port="example set input"/>
+              <connect from_op="Label: PLEASANTNESS" from_port="example set output" to_op="Select: PLEASANTNESS" to_port="example set input"/>
+              <connect from_op="Select: PLEASANTNESS" from_port="example set output" to_port="output 1"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="source_input 2" spacing="0"/>
+              <portSpacing port="sink_output 1" spacing="0"/>
+              <portSpacing port="sink_output 2" spacing="0"/>
+            </process>
+            <process expanded="true">
+              <operator activated="true" class="set_role" compatibility="9.2.001" expanded="true" height="82" name="Label: SENSITIVITY" width="90" x="45" y="34">
+                <parameter key="attribute_name" value="CLASS_SENSITIVITY"/>
+                <parameter key="target_role" value="label"/>
+                <list key="set_additional_roles"/>
+              </operator>
+              <operator activated="true" class="select_attributes" compatibility="9.2.001" expanded="true" height="82" name="Select: SENSITIVITY" width="90" x="45" y="238">
+                <parameter key="attribute_filter_type" value="subset"/>
+                <parameter key="attribute" value=""/>
+                <parameter key="attributes" value="ID|alpha_AF3_avgMag|alpha_AF3_avgPSD|alpha_AF3_maxMag|alpha_AF3_maxPSD|alpha_AF3_minMag|alpha_AF3_minPSD|alpha_AF4_avgMag|alpha_AF4_avgPSD|alpha_AF4_maxMag|alpha_AF4_maxPSD|alpha_AF4_minMag|alpha_AF4_minPSD|alpha_AF_avgDASM|alpha_AF_avgRASM|alpha_AF_maxDASM|alpha_AF_maxRASM|alpha_AF_minDASM|alpha_AF_minRASM|alpha_Pz_avgMag|alpha_Pz_avgPSD|alpha_Pz_maxMag|alpha_Pz_maxPSD|alpha_Pz_minMag|alpha_Pz_minPSD|alpha_T7_avgMag|alpha_T7_avgPSD|alpha_T7_maxMag|alpha_T7_maxPSD|alpha_T7_minMag|alpha_T7_minPSD|alpha_T8_avgMag|alpha_T8_avgPSD|alpha_T8_maxMag|alpha_T8_maxPSD|alpha_T8_minMag|alpha_T8_minPSD|alpha_T_avgDASM|alpha_T_avgRASM|alpha_T_maxDASM|alpha_T_maxRASM|alpha_T_minDASM|alpha_T_minRASM|betaHi_AF3_avgMag|betaHi_AF3_avgPSD|betaHi_AF3_maxMag|betaHi_AF3_maxPSD|betaHi_AF3_minMag|betaHi_AF3_minPSD|betaHi_AF4_avgMag|betaHi_AF4_avgPSD|betaHi_AF4_maxMag|betaHi_AF4_maxPSD|betaHi_AF4_minMag|betaHi_AF4_minPSD|betaHi_AF_avgDASM|betaHi_AF_avgRASM|betaHi_AF_maxDASM|betaHi_AF_maxRASM|betaHi_AF_minDASM|betaHi_AF_minRASM|betaHi_Pz_avgMag|betaHi_Pz_avgPSD|betaHi_Pz_maxMag|betaHi_Pz_maxPSD|betaHi_Pz_minMag|betaHi_Pz_minPSD|betaHi_T7_avgMag|betaHi_T7_avgPSD|betaHi_T7_maxMag|betaHi_T7_maxPSD|betaHi_T7_minMag|betaHi_T7_minPSD|betaHi_T8_avgMag|betaHi_T8_avgPSD|betaHi_T8_maxMag|betaHi_T8_maxPSD|betaHi_T8_minMag|betaHi_T8_minPSD|betaHi_T_avgDASM|betaHi_T_avgRASM|betaHi_T_maxDASM|betaHi_T_maxRASM|betaHi_T_minDASM|betaHi_T_minRASM|betaLo_AF3_avgMag|betaLo_AF3_avgPSD|betaLo_AF3_maxMag|betaLo_AF3_maxPSD|betaLo_AF3_minMag|betaLo_AF3_minPSD|betaLo_AF4_avgMag|betaLo_AF4_avgPSD|betaLo_AF4_maxMag|betaLo_AF4_maxPSD|betaLo_AF4_minMag|betaLo_AF4_minPSD|betaLo_AF_avgDASM|betaLo_AF_avgRASM|betaLo_AF_maxDASM|betaLo_AF_maxRASM|betaLo_AF_minDASM|betaLo_AF_minRASM|betaLo_Pz_avgMag|betaLo_Pz_avgPSD|betaLo_Pz_maxMag|betaLo_Pz_maxPSD|betaLo_Pz_minMag|betaLo_Pz_minPSD|betaLo_T7_avgMag|betaLo_T7_avgPSD|betaLo_T7_maxMag|betaLo_T7_maxPSD|betaLo_T7_minMag|betaLo_T7_minPSD|betaLo_T8_avgMag|betaLo_T8_avgPSD|betaLo_T8_maxMag|betaLo_T8_maxPSD|betaLo_T8_minMag|betaLo_T8_minPSD|betaLo_T_avgDASM|betaLo_T_avgRASM|betaLo_T_maxDASM|betaLo_T_maxRASM|betaLo_T_minDASM|betaLo_T_minRASM|betaMd_AF3_avgMag|betaMd_AF3_avgPSD|betaMd_AF3_maxMag|betaMd_AF3_maxPSD|betaMd_AF3_minMag|betaMd_AF3_minPSD|betaMd_AF4_avgMag|betaMd_AF4_avgPSD|betaMd_AF4_maxMag|betaMd_AF4_maxPSD|betaMd_AF4_minMag|betaMd_AF4_minPSD|betaMd_AF_avgDASM|betaMd_AF_avgRASM|betaMd_AF_maxDASM|betaMd_AF_maxRASM|betaMd_AF_minDASM|betaMd_AF_minRASM|betaMd_Pz_avgMag|betaMd_Pz_avgPSD|betaMd_Pz_maxMag|betaMd_Pz_maxPSD|betaMd_Pz_minMag|betaMd_Pz_minPSD|betaMd_T7_avgMag|betaMd_T7_avgPSD|betaMd_T7_maxMag|betaMd_T7_maxPSD|betaMd_T7_minMag|betaMd_T7_minPSD|betaMd_T8_avgMag|betaMd_T8_avgPSD|betaMd_T8_maxMag|betaMd_T8_maxPSD|betaMd_T8_minMag|betaMd_T8_minPSD|betaMd_T_avgDASM|betaMd_T_avgRASM|betaMd_T_maxDASM|betaMd_T_maxRASM|betaMd_T_minDASM|betaMd_T_minRASM|gamma_AF3_avgMag|gamma_AF3_avgPSD|gamma_AF3_maxMag|gamma_AF3_maxPSD|gamma_AF3_minMag|gamma_AF3_minPSD|gamma_AF4_avgMag|gamma_AF4_avgPSD|gamma_AF4_maxMag|gamma_AF4_maxPSD|gamma_AF4_minMag|gamma_AF4_minPSD|gamma_AF_avgDASM|gamma_AF_avgRASM|gamma_AF_maxDASM|gamma_AF_maxRASM|gamma_AF_minDASM|gamma_AF_minRASM|gamma_Pz_avgMag|gamma_Pz_avgPSD|gamma_Pz_maxMag|gamma_Pz_maxPSD|gamma_Pz_minMag|gamma_Pz_minPSD|gamma_T7_avgMag|gamma_T7_avgPSD|gamma_T7_maxMag|gamma_T7_maxPSD|gamma_T7_minMag|gamma_T7_minPSD|gamma_T8_avgMag|gamma_T8_avgPSD|gamma_T8_maxMag|gamma_T8_maxPSD|gamma_T8_minMag|gamma_T8_minPSD|gamma_T_avgDASM|gamma_T_avgRASM|gamma_T_maxDASM|gamma_T_maxRASM|gamma_T_minDASM|gamma_T_minRASM|theta_AF3_avgMag|theta_AF3_avgPSD|theta_AF3_maxMag|theta_AF3_maxPSD|theta_AF3_minMag|theta_AF3_minPSD|theta_AF4_avgMag|theta_AF4_avgPSD|theta_AF4_maxMag|theta_AF4_maxPSD|theta_AF4_minMag|theta_AF4_minPSD|theta_AF_avgDASM|theta_AF_avgRASM|theta_AF_maxDASM|theta_AF_maxRASM|theta_AF_minDASM|theta_AF_minRASM|theta_Pz_avgMag|theta_Pz_avgPSD|theta_Pz_maxMag|theta_Pz_maxPSD|theta_Pz_minMag|theta_Pz_minPSD|theta_T7_avgMag|theta_T7_avgPSD|theta_T7_maxMag|theta_T7_maxPSD|theta_T7_minMag|theta_T7_minPSD|theta_T8_avgMag|theta_T8_avgPSD|theta_T8_maxMag|theta_T8_maxPSD|theta_T8_minMag|theta_T8_minPSD|theta_T_avgDASM|theta_T_avgRASM|theta_T_maxDASM|theta_T_maxRASM|theta_T_minDASM|theta_T_minRASM|CLASS_SENSITIVITY"/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="attribute_value"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="time"/>
+                <parameter key="block_type" value="attribute_block"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="false"/>
+              </operator>
+              <connect from_port="input 1" to_op="Label: SENSITIVITY" to_port="example set input"/>
+              <connect from_op="Label: SENSITIVITY" from_port="example set output" to_op="Select: SENSITIVITY" to_port="example set input"/>
+              <connect from_op="Select: SENSITIVITY" from_port="example set output" to_port="output 1"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="source_input 2" spacing="0"/>
+              <portSpacing port="sink_output 1" spacing="0"/>
+              <portSpacing port="sink_output 2" spacing="0"/>
+            </process>
+          </operator>
+          <operator activated="true" class="concurrency:cross_validation" compatibility="8.2.000" expanded="true" height="145" name="Cross Validation" width="90" x="179" y="34">
+            <parameter key="split_on_batch_attribute" value="true"/>
+            <parameter key="leave_one_out" value="false"/>
+            <parameter key="number_of_folds" value="10"/>
+            <parameter key="sampling_type" value="automatic"/>
+            <parameter key="use_local_random_seed" value="false"/>
+            <parameter key="local_random_seed" value="1992"/>
+            <parameter key="enable_parallel_execution" value="true"/>
+            <process expanded="true">
+              <operator activated="true" class="select_subprocess" compatibility="9.2.001" expanded="true" height="82" name="Switch &lt;CLASSIFICATION&gt;" width="90" x="45" y="34">
+                <parameter key="select_which" value="%{classification}"/>
+                <process expanded="true">
+                  <operator activated="true" class="concurrency:parallel_decision_tree" compatibility="9.2.001" expanded="true" height="82" name="Decision Tree" width="90" x="45" y="34">
+                    <parameter key="criterion" value="gain_ratio"/>
+                    <parameter key="maximal_depth" value="20"/>
+                    <parameter key="apply_pruning" value="true"/>
+                    <parameter key="confidence" value="0.25"/>
+                    <parameter key="apply_prepruning" value="true"/>
+                    <parameter key="minimal_gain" value="0.1"/>
+                    <parameter key="minimal_leaf_size" value="2"/>
+                    <parameter key="minimal_size_for_split" value="4"/>
+                    <parameter key="number_of_prepruning_alternatives" value="3"/>
+                  </operator>
+                  <connect from_port="input 1" to_op="Decision Tree" to_port="training set"/>
+                  <connect from_op="Decision Tree" from_port="model" to_port="output 1"/>
+                  <portSpacing port="source_input 1" spacing="0"/>
+                  <portSpacing port="source_input 2" spacing="0"/>
+                  <portSpacing port="sink_output 1" spacing="0"/>
+                  <portSpacing port="sink_output 2" spacing="0"/>
+                </process>
+                <process expanded="true">
+                  <operator activated="true" class="naive_bayes" compatibility="9.2.001" expanded="true" height="82" name="Naive Bayes" width="90" x="45" y="34">
+                    <parameter key="laplace_correction" value="true"/>
+                  </operator>
+                  <connect from_port="input 1" to_op="Naive Bayes" to_port="training set"/>
+                  <connect from_op="Naive Bayes" from_port="model" to_port="output 1"/>
+                  <portSpacing port="source_input 1" spacing="0"/>
+                  <portSpacing port="source_input 2" spacing="0"/>
+                  <portSpacing port="sink_output 1" spacing="0"/>
+                  <portSpacing port="sink_output 2" spacing="0"/>
+                </process>
+                <process expanded="true">
+                  <operator activated="true" class="support_vector_machine_libsvm" compatibility="9.2.001" expanded="true" height="82" name="SVM" width="90" x="45" y="34">
+                    <parameter key="svm_type" value="C-SVC"/>
+                    <parameter key="kernel_type" value="rbf"/>
+                    <parameter key="degree" value="3"/>
+                    <parameter key="gamma" value="0.0"/>
+                    <parameter key="coef0" value="0.0"/>
+                    <parameter key="C" value="0.0"/>
+                    <parameter key="nu" value="0.5"/>
+                    <parameter key="cache_size" value="80"/>
+                    <parameter key="epsilon" value="0.001"/>
+                    <parameter key="p" value="0.1"/>
+                    <list key="class_weights"/>
+                    <parameter key="shrinking" value="true"/>
+                    <parameter key="calculate_confidences" value="false"/>
+                    <parameter key="confidence_for_multiclass" value="true"/>
+                  </operator>
+                  <connect from_port="input 1" to_op="SVM" to_port="training set"/>
+                  <connect from_op="SVM" from_port="model" to_port="output 1"/>
+                  <portSpacing port="source_input 1" spacing="0"/>
+                  <portSpacing port="source_input 2" spacing="0"/>
+                  <portSpacing port="sink_output 1" spacing="0"/>
+                  <portSpacing port="sink_output 2" spacing="0"/>
+                </process>
+                <process expanded="true">
+                  <operator activated="true" class="auto_mlp" compatibility="9.2.001" expanded="true" height="82" name="AutoMLP" width="90" x="45" y="34">
+                    <parameter key="training_cycles" value="10"/>
+                    <parameter key="number_of_generations" value="10"/>
+                    <parameter key="number_of_esemble_mlps" value="4"/>
+                  </operator>
+                  <connect from_port="input 1" to_op="AutoMLP" to_port="training set"/>
+                  <connect from_op="AutoMLP" from_port="model" to_port="output 1"/>
+                  <portSpacing port="source_input 1" spacing="0"/>
+                  <portSpacing port="source_input 2" spacing="0"/>
+                  <portSpacing port="sink_output 1" spacing="0"/>
+                  <portSpacing port="sink_output 2" spacing="0"/>
+                </process>
+              </operator>
+              <connect from_port="training set" to_op="Switch &lt;CLASSIFICATION&gt;" to_port="input 1"/>
+              <connect from_op="Switch &lt;CLASSIFICATION&gt;" from_port="output 1" to_port="model"/>
+              <portSpacing port="source_training set" spacing="0"/>
+              <portSpacing port="sink_model" spacing="0"/>
+              <portSpacing port="sink_through 1" spacing="0"/>
+            </process>
+            <process expanded="true">
+              <operator activated="true" class="apply_model" compatibility="9.2.001" expanded="true" height="82" name="Apply Model" width="90" x="45" y="34">
+                <list key="application_parameters"/>
+                <parameter key="create_view" value="false"/>
+              </operator>
+              <operator activated="true" class="performance_classification" compatibility="9.2.001" expanded="true" height="82" name="Performance" width="90" x="179" y="34">
+                <parameter key="main_criterion" value="first"/>
+                <parameter key="accuracy" value="true"/>
+                <parameter key="classification_error" value="true"/>
+                <parameter key="kappa" value="true"/>
+                <parameter key="weighted_mean_recall" value="true"/>
+                <parameter key="weighted_mean_precision" value="true"/>
+                <parameter key="spearman_rho" value="false"/>
+                <parameter key="kendall_tau" value="false"/>
+                <parameter key="absolute_error" value="false"/>
+                <parameter key="relative_error" value="false"/>
+                <parameter key="relative_error_lenient" value="false"/>
+                <parameter key="relative_error_strict" value="false"/>
+                <parameter key="normalized_absolute_error" value="false"/>
+                <parameter key="root_mean_squared_error" value="false"/>
+                <parameter key="root_relative_squared_error" value="false"/>
+                <parameter key="squared_error" value="false"/>
+                <parameter key="correlation" value="true"/>
+                <parameter key="squared_correlation" value="false"/>
+                <parameter key="cross-entropy" value="false"/>
+                <parameter key="margin" value="false"/>
+                <parameter key="soft_margin_loss" value="false"/>
+                <parameter key="logistic_loss" value="false"/>
+                <parameter key="skip_undefined_labels" value="true"/>
+                <parameter key="use_example_weights" value="true"/>
+                <list key="class_weights"/>
+              </operator>
+              <connect from_port="model" to_op="Apply Model" to_port="model"/>
+              <connect from_port="test set" to_op="Apply Model" to_port="unlabelled data"/>
+              <connect from_op="Apply Model" from_port="labelled data" to_op="Performance" to_port="labelled data"/>
+              <connect from_op="Performance" from_port="performance" to_port="performance 1"/>
+              <portSpacing port="source_model" spacing="0"/>
+              <portSpacing port="source_test set" spacing="0"/>
+              <portSpacing port="source_through 1" spacing="0"/>
+              <portSpacing port="sink_test set results" spacing="0"/>
+              <portSpacing port="sink_performance 1" spacing="0"/>
+              <portSpacing port="sink_performance 2" spacing="0"/>
+            </process>
+          </operator>
+          <operator activated="true" class="write_csv" compatibility="8.2.000" expanded="true" height="82" name="Write CSV" width="90" x="514" y="238">
+            <parameter key="csv_file" value="D:\_Results\T%{test}_DS-merged_L%{label}_C%{classification}.csv"/>
+            <parameter key="column_separator" value=","/>
+            <parameter key="write_attribute_names" value="true"/>
+            <parameter key="quote_nominal_values" value="true"/>
+            <parameter key="format_date_attributes" value="true"/>
+            <parameter key="append_to_file" value="false"/>
+            <parameter key="encoding" value="SYSTEM"/>
+          </operator>
+          <operator activated="true" class="write_as_text" compatibility="9.2.001" expanded="true" height="103" name="Write as Text" width="90" x="313" y="34">
+            <parameter key="result_file" value="D:\_Results\T%{test}_DS-merged_L%{label}_C%{classification}.res"/>
+            <parameter key="encoding" value="SYSTEM"/>
+          </operator>
+          <operator activated="true" class="legacy:write_performance" compatibility="9.2.001" expanded="true" height="68" name="Write Performance" width="90" x="514" y="136">
+            <parameter key="performance_file" value="D:\_Results\T%{test}_DS-merged_L%{label}_C%{classification}.per"/>
+          </operator>
+          <operator activated="true" class="legacy:write_model" compatibility="9.2.001" expanded="true" height="68" name="Write Model" width="90" x="514" y="34">
+            <parameter key="model_file" value="D:\_Results\T%{test}_DS-merged_L%{label}_C%{classification}.mod"/>
+            <parameter key="overwrite_existing_file" value="true"/>
+            <parameter key="output_type" value="Binary"/>
+          </operator>
+          <connect from_port="input 1" to_op="Switch &lt;LABEL&gt;" to_port="input 1"/>
+          <connect from_op="Switch &lt;LABEL&gt;" from_port="output 1" to_op="Cross Validation" to_port="example set"/>
+          <connect from_op="Cross Validation" from_port="model" to_op="Write as Text" to_port="input 1"/>
+          <connect from_op="Cross Validation" from_port="example set" to_op="Write CSV" to_port="input"/>
+          <connect from_op="Cross Validation" from_port="performance 1" to_op="Write as Text" to_port="input 2"/>
+          <connect from_op="Write CSV" from_port="through" to_port="output 3"/>
+          <connect from_op="Write as Text" from_port="input 1" to_op="Write Model" to_port="input"/>
+          <connect from_op="Write as Text" from_port="input 2" to_op="Write Performance" to_port="input"/>
+          <connect from_op="Write Performance" from_port="through" to_port="output 2"/>
+          <connect from_op="Write Model" from_port="through" to_port="output 1"/>
+          <portSpacing port="source_input 1" spacing="0"/>
+          <portSpacing port="source_input 2" spacing="0"/>
+          <portSpacing port="sink_output 1" spacing="0"/>
+          <portSpacing port="sink_output 2" spacing="0"/>
+          <portSpacing port="sink_output 3" spacing="0"/>
+          <portSpacing port="sink_output 4" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="false" class="multiply" compatibility="9.2.001" expanded="true" height="68" name="Multiply" width="90" x="581" y="187"/>
+      <connect from_op="Set Macros" from_port="through 1" to_op="Switch &lt;TEST&gt;" to_port="input 1"/>
+      <connect from_op="Switch &lt;TEST&gt;" from_port="output 1" to_op="Dataset blending/cleansing" to_port="in 1"/>
+      <connect from_op="Dataset blending/cleansing" from_port="out 1" to_op="Loop &lt;LABEL&gt;" to_port="input 1"/>
+      <connect from_op="Loop &lt;LABEL&gt;" from_port="output 1" to_port="result 1"/>
+      <connect from_op="Loop &lt;LABEL&gt;" from_port="output 2" to_port="result 2"/>
+      <connect from_op="Loop &lt;LABEL&gt;" from_port="output 3" to_port="result 3"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+      <portSpacing port="sink_result 3" spacing="0"/>
+      <portSpacing port="sink_result 4" spacing="0"/>
+    </process>
+  </operator>
+</process>

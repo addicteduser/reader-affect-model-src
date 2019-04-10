@@ -5,12 +5,14 @@ Contains all dev-related files for the [Reader Affect Model MS thesis](https://g
 ## File Structure
     .
     +-- MATLAB
+    +-- RapidMiner Processes
     +-- ReaderAffectModelProjects
     |   +-- DataCollector
     |   +-- DataPreprocessor
     |   +-- ReaderAffectModelProjects.sln
 
 * **MATLAB** contains the MATLAB functions for extracting the features (see `EegFeaturesExtractor.m`) and building the datasets (see `BatchDataProcessor.m`, `DataProcessor.m`, and `BuildDataset.m`).
+* **RapidMiner Processes** contains the `.rmp` files used to implement the machine learning techniques and create the models.
 * **ReaderAffectModelProjects** is a Microsoft Visual Studio [solution](https://docs.microsoft.com/en-us/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2017) for data acquisition (see `/DataCollector`) and preprocessing (see `/DataPreprocessor`)
 
 ## Usage/Development
